@@ -7,6 +7,7 @@ Une boîte à boutons qui s'allume, chante et joue au Simon avec les enfants. Le
 | 1 | [etape-1-lumieres](etape-1-lumieres) | 4 boutons d'arcade, anneau NeoPixel : chaque bouton remplit l'anneau de sa couleur, arc-en-ciel au repos |
 | 2 | [etape-2-sons](etape-2-sons) | Ajoute un haut-parleur : piano de couleurs, jingle au démarrage, « Au clair de la lune » en tenant rouge + jaune |
 | 3 | [etape-3-jeu-simon](etape-3-jeu-simon) | Ajoute un écran : jeu Simon avec score, record gardé en mémoire, et mode piano libre |
+| 4 | [etape-4-micro](etape-4-micro) | Ajoute un micro : perroquet qui répète avec une voix de souris ou de géant, disco où l'anneau danse au son de la voix et des claps |
 | Bonus | [bonus](bonus) | Batterie, vrais sons et histoires sur carte SD, réglage du volume, mise en veille |
 
 Toutes les étapes utilisent la même carte, **ESP32 DevKit V1 (ESP32-WROOM-32, 30 broches)**, et le même brochage : on ajoute des pièces sans rien recâbler. Pas de Wi-Fi, donc pas de secret : les réglages (broches, luminosité, volume) sont dans `include/reglages.h` et peuvent être publiés.
@@ -19,6 +20,7 @@ Toutes les étapes utilisent la même carte, **ESP32 DevKit V1 (ESP32-WROOM-32, 
 | Anneau NeoPixel, DIN (via résistance 330 Ω) | GPIO13 |
 | MAX98357A : BCLK / LRC / DIN | GPIO26 / GPIO25 / GPIO27 |
 | Écran OLED : SDA / SCL | GPIO21 / GPIO22 |
+| Micro INMP441 : SCK / WS / SD (L/R à GND, VDD en 3,3 V) | GPIO14 / GPIO4 / GPIO35 |
 | Alimentation 5 V de l'anneau et de l'ampli | VIN (5 V de l'USB) |
 
 ## Liste d'achat par étape
@@ -48,6 +50,12 @@ Prix approximatifs ; chaque étape réutilise ce qui a été acheté avant.
 | Pièce | Prix approx. | Où chercher |
 | --- | --- | --- |
 | Écran OLED 0,96 pouce SSD1306 I2C 128 × 64 (4 broches) | 3 à 5 € | [Amazon](https://www.amazon.fr/s?k=oled+ssd1306+0.96+i2c) · [AliExpress](https://fr.aliexpress.com/w/wholesale-oled-ssd1306-0.96-i2c.html) |
+
+### Étape 4 (environ 2 à 4 € en plus)
+
+| Pièce | Prix approx. | Où chercher |
+| --- | --- | --- |
+| Micro I2S INMP441 (module rond à 6 broches) | 2 à 4 € | [Amazon](https://www.amazon.fr/s?k=inmp441) · [AliExpress](https://fr.aliexpress.com/w/wholesale-inmp441.html) |
 
 ### Bonus
 
